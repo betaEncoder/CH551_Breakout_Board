@@ -1,0 +1,57 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              04/13/2019 18:07:39 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c ROM(COMPACT) WARNINGLEVEL(0) OPTIMIZE(8,SPEED) BROWSE DEBUG OBJEC
+                    -TEXTEND PRINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include<CH552.h>
+   2          #include<Public/Debug.h>
+   3          #include<GPIO/GPIO.h>
+   4          #include<Timer/Timer.H>
+   5          
+   6          sbit LED = P3^2;
+   7          
+   8          UINT16 cnt = 0;
+   9          void main(){
+  10   1        int i;
+  11   1        CfgFsys( );
+  12   1        mDelaymS(20);
+  13   1        Port1Cfg(3,2);
+  14   1        mTimer0Clk12DivFsys();                                                     //T0 = 250kHz
+  15   1        mTimer_x_ModInit(0,2);                                                     //8bit auto reloaded
+  16   1        mTimer_x_SetData(0,0xf9f9);                                                //249count
+  17   1        mTimer0RunCTL(1);                                                          //T0 run
+  18   1        ET0 = 1;                                                                   //T0 int enable    
+  19   1        EA = 1;                                                                    //global int enable
+  20   1        while(1){
+  21   2          ;
+  22   2        }
+  23   1      }
+  24          
+  25          void  mTimer0Interrupt( void ) interrupt INT_NO_TMR0 using 1                //interrupt 1kHz
+  26          {
+  27   1        if(cnt>499){
+  28   2          cnt = 0;
+  29   2          LED = ~LED;
+  30   2        }else{
+  31   2          cnt++;
+  32   2        }
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     82    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

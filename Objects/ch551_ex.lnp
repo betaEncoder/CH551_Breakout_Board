@@ -1,0 +1,7 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\GPIO.obj",
+".\Objects\Debug.obj",
+".\Objects\Timer.obj" 
+TO ".\Objects\ch551_ex" 
+PRINT(".\Listings\ch551_ex.m51")
