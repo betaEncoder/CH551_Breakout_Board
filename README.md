@@ -37,7 +37,7 @@ WCHISPToolを実行し，ツールバーから Function-Add WCH MCU Database to 
 [ElectrodragonのWiki](https://www.electrodragon.com/w/WCH) から [デモプロジェクト](https://bitbucket.org/e_dragon/wch/src/ed9fe291571d748ddef2d6a0d1cddc5c443eda9b/CH55x/demo%20code/?at=master) を作業ディレクトリへクローン又はDLしておきます．
 
 ## uVisionでプロジェクトを設定&Build
-上記で手に入れたでデモプロジェクトの中から目的のアプリケーションに近いプロジェクトを探して編集していくと近道です．このリポジトリを参考にしても良いです．
+上記で手に入れたデモプロジェクトの中から目的のアプリケーションに近いプロジェクトを探して編集していくと近道です．このリポジトリを参考にしても良いです．
 Options for Target からプロジェクトの設定を確認します．
 Deviceタブは前述の方法で組み込みが成功しているとWCH社のマイコンが選択できるようになっているはずです．無ければMicrochipのAT89C51などを選択しておきましょう．
 OutputタブはCreate HEX File のチェックを入れておきます．
