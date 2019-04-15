@@ -35,6 +35,7 @@ WCHISPToolを実行し，ツールバーから Function-Add WCH MCU Database to 
 
 ### SDKをダウンロード
 [ElectrodragonのWiki](https://www.electrodragon.com/w/WCH) から [デモプロジェクト](https://bitbucket.org/e_dragon/wch/src/ed9fe291571d748ddef2d6a0d1cddc5c443eda9b/CH55x/demo%20code/?at=master) を作業ディレクトリへクローン又はDLしておきます．
+メーカから[デバイスの定義ファイル](http://www.wch.cn/downloads/CH552EVT_ZIP.html)も提供されています．
 
 ## uVisionでプロジェクトを設定&Build
 上記で手に入れたデモプロジェクトの中から目的のアプリケーションに近いプロジェクトを探して編集していくと近道です．このリポジトリを参考にしても良いです．
